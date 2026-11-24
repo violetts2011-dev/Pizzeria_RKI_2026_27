@@ -11,6 +11,8 @@ public class CookPizza : MonoBehaviour
     public GameObject gribper1;
     public GameObject kolbasper1;
     public GameObject basilper1;
+    public GameObject onionper1;
+    public GameObject olivkaper1;
 
     [Header("Объекты, которые включатся при касании")]
     public GameObject sous1;
@@ -27,6 +29,10 @@ public class CookPizza : MonoBehaviour
     public GameObject kolbas2;
     public GameObject basil1;
     public GameObject basil2;
+    public GameObject onion1;
+    public GameObject onion2;
+    public GameObject olivka1;
+    public GameObject olivka2;
 
     [Header("Куда телепортируется этот объект")]
     public Vector3 teleportPosition1;
@@ -36,6 +42,8 @@ public class CookPizza : MonoBehaviour
     public Vector3 teleportPosition5;
     public Vector3 teleportPosition6;
     public Vector3 teleportPosition7;
+    public Vector3 teleportPosition8;
+    public Vector3 teleportPosition9;
 
     public List<GameObject> allIngredients = new List<GameObject>();
 
@@ -49,7 +57,9 @@ public class CookPizza : MonoBehaviour
             peper1, peper2,
             grib1, grib2,
             kolbas1, kolbas2,
-            basil1, basil2
+            basil1, basil2,
+            onion1, onion2,
+            olivka1, olivka2,
         });
     }
 
@@ -62,6 +72,8 @@ public class CookPizza : MonoBehaviour
         teleportPosition5 = gribper1.transform.position;
         teleportPosition6 = kolbasper1.transform.position;
         teleportPosition7 = basilper1.transform.position;
+        teleportPosition8 = onionper1.transform.position;
+        teleportPosition9 = olivkaper1.transform.position;
     }
      
     private void OnTriggerEnter2D(Collider2D other)
@@ -101,6 +113,16 @@ public class CookPizza : MonoBehaviour
         if (per == basilper1)
         {
             Process(basilper1, teleportPosition7, basil1, basil2);
+        }
+
+        if (per == onionper1)
+        {
+            Process(onionper1, teleportPosition8, onion1, onion2);
+        }
+
+        if (per == olivkaper1)
+        {
+            Process(olivkaper1, teleportPosition9, olivka1, olivka2);
         }
     }
 

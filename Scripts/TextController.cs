@@ -9,7 +9,7 @@ public class TextController : MonoBehaviour
 
     [SerializeField]
     private List<string> toppings = new List<string>
-    {"пепперони", "грибами", "колбасками", "базиликом"};
+    {"пепперони", "грибами", "колбасками", "базиликом", "оливками", "луком"};
 
     private void Start()
     {
