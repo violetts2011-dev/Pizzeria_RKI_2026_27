@@ -5,6 +5,7 @@ using UnityEngine;
 public class TextController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _orderText;
+    [SerializeField] private TMP_Text _zakText;
     public List<string>  result = new List<string>();
 
     [SerializeField]
@@ -30,5 +31,6 @@ public class TextController : MonoBehaviour
         }
 
         _orderText.text = "Сделайте мне пиццу с \n" + string.Join(" и ", result);
+        _zakText.text = "Гость попросил пиццу с " + string.Join(" и ", result);
     }
 }

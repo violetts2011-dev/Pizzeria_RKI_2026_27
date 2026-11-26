@@ -22,6 +22,10 @@ public class FinalCook : MonoBehaviour
     private CookPizza cook;
     private TextController textController;
 
+    [Header("Счетчик")]
+    [SerializeField] private TMP_Text tchet;
+    [SerializeField] private int chet;
+
     private void Start()
     {
         vpizza = pizza.transform.position;
@@ -61,6 +65,7 @@ public class FinalCook : MonoBehaviour
 
         ResetSpeeds();
         MoveLine();
+        Shet();
 
         Invoke(nameof(ps), 3f);
         tzakac.text = "Заказ выполнен!";
@@ -103,6 +108,9 @@ public class FinalCook : MonoBehaviour
         cook.gribper1.GetComponent<peremobject>().speed = 20f;
         cook.kolbasper1.GetComponent<peremobject>().speed = 20f;
         cook.basilper1.GetComponent<peremobject>().speed = 20f;
+        cook.onionper1.GetComponent<peremobject>().speed = 20f;
+        cook.olivkaper1.GetComponent<peremobject>().speed = 20f;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -268,5 +276,11 @@ public class FinalCook : MonoBehaviour
     private void ps()
     {
         pizza.transform.position = vpizza;
+    }
+
+    private void Shet()
+    {
+        chet += 1;
+        tchet.text = "Выполнено заказов: " + chet;
     }
 }
